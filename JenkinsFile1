@@ -20,5 +20,10 @@ pipeline {
                 sh 'mvn clean package'
             }
         }
+         stage('SonarQube') {
+            steps {
+                sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JavaProject-2'
+            }
+        }
     }
   }
