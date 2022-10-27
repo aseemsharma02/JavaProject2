@@ -17,15 +17,15 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn sonar:sonar'
-                  }
+                sh 'mvn clean package'
+                }
         }
          stage('SonarQube') {
             steps {
             script{
             withSonarQubeEnv(installationName: 'SonarScannerAWS', credentialsId: 'AWS_Sonar_Server_Token') {
+            sh 'mvn sonar:sonar'
             //sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JavaProject-2'
-            sh 'mvn clean package'
             }
             waitForQualityGate abortPipeline: false, credentialsId: 'AWS_Sonar_Server_Token'
                   }
