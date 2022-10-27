@@ -23,10 +23,11 @@ pipeline {
          stage('SonarQube') {
             steps {
             script{
-            withSonarQubeEnv(installationName: 'SonarScanner', credentialsId: 'SONAR-TOKEN') {
-            sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JavaProject-2'
+            withSonarQubeEnv(installationName: 'SonarScannerAWS', credentialsId: 'AWS_Sonar_Server_Token') {
+            //sh 'mvn verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=JavaProject-2'
+            sh 'mvn clean package'
             }
-            waitForQualityGate abortPipeline: false, credentialsId: 'SonarTokenRoot'
+            waitForQualityGate abortPipeline: false, credentialsId: 'AWS_Sonar_Server_Token'
                   }
                   }
          }
