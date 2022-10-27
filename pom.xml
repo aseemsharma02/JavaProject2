@@ -19,7 +19,6 @@
     <finalName>dockeransible</finalName>
         alNa </build>
  <properties>
-  <sonar.organization>aseemsharma02</sonar.organization>
-  <sonar.host.url>http://54.234.77.23:9000</sonar.host.url>
+    <sonar.host.url>http://54.234.77.23:9000</sonar.host.url>
 </properties>
 </project>
