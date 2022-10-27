@@ -17,10 +17,10 @@
   </dependencies>
   <build>
     <finalName>dockeransible</finalName>
-        </build>
+        alNa </build>
  <properties>
-  <sonar.organization>aseemsharma02</sonar.organization>
-  <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+  <!-- <sonar.organization>aseemsha rma02</sonar.organization> -->
+  <!-- <sonar.host.url>https://sonarcloud.io</sonar.host.url> -->
   <sonar.host.url>http://54.234.77.23:9000</sonar.host.url>
 </properties>
 </project>
