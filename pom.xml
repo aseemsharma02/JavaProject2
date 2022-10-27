@@ -17,7 +17,7 @@
   </dependencies>
   <build>
     <finalName>dockeransible</finalName>
-        alNa </build>
+   </build>
  <properties>
     <sonar.host.url>http://54.234.77.23:9000</sonar.host.url>
 </properties>
