@@ -5,6 +5,8 @@ pipeline {
     }
     environment {
     registry = '467864354237.dkr.ecr.us-east-1.amazonaws.com/dockerimage'
+    registryCredentials = 'Jenkins-ECR-login-credential'
+    // dockerImage = '467864354237.dkr.ecr.us-east-1.amazonaws.com/dockerimage' + $BUILD_NUMBER
     }
     stages {
         stage('Hello') {
@@ -52,6 +54,15 @@ pipeline {
             dockerImage = docker.build registry + ":$BUILD_NUMBER"
                         }
                     }
+                }
+            stage ('Deploy the image to AWS ECR'){
+            steps {
+            script {
+            docker.WithRegistry('', registrycredentials) {
+            dockerimage.push
+                        }
+                    }
+                }
                 }
         }
    }
