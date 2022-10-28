@@ -6,7 +6,7 @@ pipeline {
     environment {
     registry = '467864354237.dkr.ecr.us-east-1.amazonaws.com/dockerimage'
     registryCredentials = 'Jenkins-ECR-login-credential'
-    // dockerImage = '467864354237.dkr.ecr.us-east-1.amazonaws.com/dockerimage' + $BUILD_NUMBER
+    dockerImage = ''
     }
     stages {
         stage('Hello') {
