@@ -66,8 +66,12 @@ pipeline {
                 }
            }
             post{
-        always{
-            slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "good", message: "Test Email")
-        }
+            if ( currentBuild.currentResult == "SUCCESS" ) {
+               slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "green", message: "Build successful")
+               }
+            else {
+               slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "red", message: "Build failed")
+                 }
+                }
     }
  }
