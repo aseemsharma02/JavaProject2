@@ -62,15 +62,15 @@ pipeline {
             dockerImage.push()
                         }
                     }
+                  }
                 }
-                }
-            if ( currentBuild.currentResult == "SUCCESS" ) {
-               slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "green", message: "Build successful")
-               }
-            else {
-               slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "red", message: "Build failed")
-                 }
-              
-   }
- 
+              }
+           post{
+               success{
+                     slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "green", message: "Build successful")
+                      }
+           post{
+                failure{
+                        slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "red", message: "Build failed")
+               } 
  }
