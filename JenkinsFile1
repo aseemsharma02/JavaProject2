@@ -25,6 +25,7 @@ pipeline {
         stage('Build') {
             steps {
 //                sh 'mvn clean package'
+                    echo 'Hiya Build bay'
                 }
         }
     ////   stage('SonarQube') {
