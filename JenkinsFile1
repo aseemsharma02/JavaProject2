@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-                echo 'Hello World
+                echo 'Hello World'
                 echo 'Hiya World Now'
             }
         }
@@ -24,7 +24,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+//                sh 'mvn clean package'
                 }
         }
     ////   stage('SonarQube') {
