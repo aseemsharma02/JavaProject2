@@ -72,5 +72,5 @@ pipeline {
             else {
                slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "red", message: "Build failed")
                  }
-                }
+              
  }
