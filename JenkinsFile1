@@ -63,15 +63,14 @@ pipeline {
                         }
                     }
                   }
-                }
-              }
-           post{
-               success{
+               }
+            }
+           post {
+               success {
                      slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "green", message: "Build successful")
                  }     }
-                 
-           post{
-                failure{
+            post {
+                failure {
                         slackSend( channel: "#jenkins-feedback", token: "Slack-Token", color: "red", message: "Build failed")
                        }  
                }
